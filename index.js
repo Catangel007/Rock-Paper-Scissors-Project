@@ -1,6 +1,10 @@
 console.log("hello world")
 const choices = ["Rock","Paper","Scissors"];
 const random1 = Math.random();
+let humanScore = 0;
+let computerScore =0;
+humanScore;
+computerScore;
 
 function getComputerChoice(choices){
 
@@ -9,6 +13,11 @@ function getComputerChoice(choices){
 }
 
 function getHumanChoice(choice){
-    getHumanChoice=window.prompt("Rock, Paper, Scissors shoot!")
+    getHumanChoice=window.prompt("Rock, Paper, Scissors shoot!, ''")
     getHumanChoice= document.querySelector(input)
+    console.log(getHumanChoice);
 }
+function playRound(/humanScore/i,computerScore){
+    
+
+};
