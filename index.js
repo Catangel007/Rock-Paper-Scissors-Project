@@ -1,6 +1,4 @@
 
-
-let playRound = 0;
 let humanScore = 0;
 let computerScore =0;
 
@@ -11,11 +9,15 @@ console.log(randomValue);
 }
 return getComputerChoice();
 
+
+
 function getHumanChoice(input){
    let getHumanChoice= Window.prompt("Rock, Paper, Scissors, shoot!. ''");
     getHumanChoice= document.querySelector(input);
     console.log(getHumanChoice);
 }
+
+for (let i = 5; i > 0; i++) {
 function playRound(humanScore,computerScore){
    
     if((getComputerChoice === "Rock") && (getHumanChoice === "Scissors")){      
@@ -66,7 +68,7 @@ function playRound(humanScore,computerScore){
         console.log("You need to choose an option to play this game")
        }
 }
-
+}
   
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
