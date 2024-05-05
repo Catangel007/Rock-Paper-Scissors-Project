@@ -1,6 +1,9 @@
 
 let humanScore = 0;
 let computerScore =0;
+const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  
 
 function getComputerChoice(){
 let myArray = ["Rock","Paper","Scissors"];
@@ -17,8 +20,8 @@ function getHumanChoice(input){
     console.log(getHumanChoice);
 }
 
-for (let i = 5; i > 0; i++) {
-function playRound(humanScore,computerScore){
+for (let i = 0; i < 5; i++) {
+    function playRound(humanScore,computerScore){
    
     if((getComputerChoice === "Rock") && (getHumanChoice === "Scissors")){      
    console.log("You lose! Rock crushes Scissors");
@@ -70,8 +73,6 @@ function playRound(humanScore,computerScore){
 }
 }
   
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
   
   playRound(humanSelection, computerSelection);
   
