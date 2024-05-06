@@ -23,48 +23,48 @@ function getHumanChoice(input){
 for (let i = 0; i < 5; i++) {
     function playRound(humanScore,computerScore){
    
-    if((getComputerChoice === "Rock") && (getHumanChoice === "Scissors")){      
+    if((computerSelection === "Rock") && (humanSelection === "Scissors")){      
    console.log("You lose! Rock crushes Scissors");
     computerScore++;
     }
     
-    else if ((getComputerChoice ==="Rock") && (getHumanChoice === "Paper")){
+    else if ((computerSelection ==="Rock") && (humanSelection === "Paper")){
         console.log("Yeah, You win! Paper wraps rock.");
         humanScore++;
     }
 
-    else if ((getComputerChoice ==="Rock") && (getHumanChoice === "Rock")){
-        console.log("Hmmp... It's a Tie! try again.");
+    else if ((computerSelection ==="Rock") && (humanSelection === "Rock")){
+        console.log("Hmmm... It's a Tie! try again.");
     }
 
-    else if ((getComputerChoice === "Scissors") && (getHumanChoice === "Rock")){
+    else if ((computerSelection === "Scissors") && (humanSelection === "Rock")){
 
         console.log("You Win! Rock crushes Scissors")
         humanScore++;
     }
-    else if ((getComputerChoice === "Scissors") && (getHumanChoice === "Paper")){
+    else if ((computerSelection === "Scissors") && (humanSelection === "Paper")){
 
         console.log("You lose! Scissors cuts Paper")
         computerScore++;
     }
-    else if ((getComputerChoice === "Scissors") && (getHumanChoice === "Scissors")){
+    else if ((computerSelection === "Scissors") && (humanSelection === "Scissors")){
 
-        console.log("Hmmp... It's a Tie! try again.")
+        console.log("Hmmm... It's a Tie! try again.")
     }
        
-    else if ((getComputerChoice === "Paper") && (getHumanChoice === "Rock")){
+    else if ((computerSelection === "Paper") && (humanSelection === "Rock")){
 
          console.log("You Lose! Paper wraps rock!")
          computerScore++;
     }
-    else if ((getComputerChoice === "Paper") && (getHumanChoice === "Scissors")){
+    else if ((computerSelection === "Paper") && (humanSelection === "Scissors")){
 
         console.log("You win! Scissors cuts Paper.")
         humanScore++;
     }
-     else if ((getComputerChoice === "Paper") && (getHumanChoice === "Paper")){
+     else if ((computerSelection === "Paper") && (humanSelection === "Paper")){
 
-        console.log("Hmmp... It's a Tie! try again.")
+        console.log("Hmmm... It's a Tie! try again.")
        }
 
        else {
@@ -75,4 +75,9 @@ for (let i = 0; i < 5; i++) {
   
   
   playRound(humanSelection, computerSelection);
+
+  let roundOne = humanScore , computerScore
+
+  
+
   
