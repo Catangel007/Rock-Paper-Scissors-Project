@@ -1,29 +1,32 @@
 
+
+  
+  //function to display a random integer number
+  const getRandomNumber = (integer) => Math.floor(Math.random()* integer);
+
+  //function to get random Computer Choice
+   let getComputerChoice = () => {
+    let randomValue = getRandomNumber(3);
+
+    if (randomValue === 0){
+        return "Rock"; 
+         
+    } else if ( random === 1){
+        return "Paper";
+    }else { 
+        return "Scissors"}
+   };
+
+ // Create variables to store play score.
+
 let humanScore = 0;
 let computerScore =0;
-const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-  
-  let randomValue = myArray[Math.floor((Math.random()* myArray.length))];
-  console.log(randomValue)
-function getComputerChoice(){
-let myArray = ["Rock","Paper","Scissors"];
- return myArray;
-//if (randomValue == [0]) 
-//{console.log("Rock")};
-// if (randomValue == [1])
-//{console.log("Paper")};
-// if (randomValue == [2])
-//{console.log("Scissors")};
-//return (randomValue == getComputerChoice());
-}
+let round = 1;
 
-getComputerChoice();
-console.log(myArray[1])
 
 
  
-
+// function to get Human Choice.
 function getHumanChoice(input){
     console.log(window.prompt("Rock, Paper, Scissors, shoot!. ''"))
     getHumanChoice= document.querySelector(input);
@@ -32,10 +35,16 @@ function getHumanChoice(input){
 }
 console.log(getHumanChoice());
 
+ // loop to Play game five times
 
-for (let i = 0; i < 5; i++) {
     function playRound(humanScore,computerScore){
-   
+
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+
+
+   // game structure
+
     if((computerScore === "Rock") && (humanScore=== "Scissors")){      
    console.log("You lose! Rock crushes Scissors");
     computerScore++;
@@ -83,14 +92,31 @@ for (let i = 0; i < 5; i++) {
        else {
         console.log("You need to choose an option to play this game")
        }
-}
-}
-  
-  
-  playRound(humanSelection, computerSelection);
+return humanScore;
+return computerScore;
 
-  let roundOne = humanScore , machineScore//
+}
 
-  
+
+
+   
+   function game() { 
+    for (let i = 0; i < 5; i++) {
+        playRound(); //remove console here.
+        console.log(`Computer score: ${computerScore}`);
+        console.log(`Your score: ${humanScore}`);
+       }
+    winner();
+}
+
+function winner() {
+    if (computerScore > humanScore) {
+        console.log("\nThe computer dominated your ass! Better luck next time!")
+    } else if (computerScore < humanScore) {
+        console.log("\nWay to crush it! You win!")
+    } else {
+        console.log("\nHoly shizzers! It's a tie!")
+    }
+}
 
   
