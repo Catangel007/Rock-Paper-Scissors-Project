@@ -41,9 +41,41 @@ div#container{
 
 }
 
-#player{
+#avatar{
     background-color: rgb(188, 197, 205);
     opacity: 20%;
     max-height: 500px;
     max-width: 500px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.one{
+    font-size: 100px;
+    height: 150px;
+    background-color: beige;
+    
+
+}
+.two{
+    font-size: 100px;
+    height: 150px;
+    background-color: beige;
+}
+.three{
+    font-size: 100px;
+    height: 150px;
+    background-color: beige;
+}
+.four{
+    font-size: 100px;
+    height: 150px;
+    background-color: beige;
+}
+.box{
+    display: flex;
+    flex-direction: column;
 }
