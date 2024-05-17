@@ -7,15 +7,20 @@
   //function to get random Computer Choice
    let getComputerChoice = () => {
     let randomValue = getRandomNumber(3);
-
     if (randomValue === 0){
-        return "Rock"; 
-         
+        return "rock";
+        
+
     } else if ( random === 1){
-        return "Paper";
+        return "paper";
+        
+
     }else { 
-        return "Scissors"}
+        return "scissors";
+              
    };
+   
+};
 
  // Create variables to store play score.
 
@@ -27,19 +32,21 @@ let round = 1;
 
  
 // function to get Human Choice.
-function getHumanChoice (humanSelection){  
+function getHumanChoice (){  
 const rock = document.querySelector(".rock");
-rock.addEventListener("click", () => {
-    return humanSelection= "rock";
-})
+{rock.addEventListener("click", () => { 
+    return "rock";
+    
+})}
 const paper = document.querySelector(".paper");
-paper.addEventListener("click", () => {
-    return humanSelection= "paper";
-})
-const scissors = document.querySelector(".scissors");
+{paper.addEventListener("click", () => {
+     return "paper";
+     
+})}
+{const scissors = document.querySelector(".scissors");
 scissors.addEventListener("click", () => {
-    return humanSelection= "scissors";
-})
+    return "scissors";
+})}
 }
 
 const humanSelection = getHumanChoice();
@@ -50,46 +57,46 @@ const message = document.querySelector(".message");
 function playRound(humanScore,computerScore){
    // game structure
   
-    if((computerSelection=== "Rock") && (humanSelection=== "Scissors")){      
+    if((computerSelection=== "rock") && (humanSelection=== "scissors")){      
    message.textContent = "You lose! Rock crushes Scissors";
-    computerScore++;
+     return computerScore++;
     }
     
-    else if ((computerSelection==="Rock") && (humanSelection=== "Paper")){
+    else if ((computerSelection==="rock") && (humanSelection=== "paper")){
         message.textContent = "Yeah, You win! Paper wraps rock.";
-        humanScore++;
+        return humanScore++;
     }
 
-    else if ((computerSelection==="Rock") && (humanSelection=== "Rock")){
+    else if ((computerSelection==="rock") && (humanSelection=== "rock")){
         message.textContent = "Hmmm... It's a Tie! try again.";
     }
 
-    else if ((computerSelection=== "Scissors") && (humanSelection=== "Rock")){
+    else if ((computerSelection=== "scissors") && (humanSelection=== "rock")){
 
         message.textContent = "You Win! Rock crushes Scissors";
-        humanScore++;
+        return humanScore++;
     }
-    else if ((computerSelection=== "Scissors") && (humanSelection=== "Paper")){
+    else if ((computerSelection=== "scissors") && (humanSelection=== "paper")){
 
         message.textContent = "You lose! Scissors cuts Paper";
-        computerScore++;
+       return computerScore++;
     }
-    else if ((computerSelection=== "Scissors") && (humanSelection=== "Scissors")){
+    else if ((computerSelection=== "scissors") && (humanSelection=== "scissors")){
 
         message.textContent = "Hmmm... It's a Tie! try again.";
     }
        
-    else if ((computerSelection=== "Paper") && (humanSelection=== "Rock")){
+    else if ((computerSelection=== "paper") && (humanSelection=== "rock")){
 
         message.textContent = "You Lose! Paper wraps rock!";
-         computerScore++;
+        return computerScore++;
     }
-    else if ((computerSelection=== "Paper") && (humanSelection=== "Scissors")){
+    else if ((computerSelection=== "paper") && (humanSelection=== "scissors")){
 
         message.textContent = "You win! Scissors cuts Paper.";
-        humanScore++;
+        return humanScore++;
     }
-     else if ((computerSelection=== "Paper") && (humanSelection=== "Paper")){
+     else if ((computerSelection=== "paper") && (humanSelection=== "paper")){
 
         message.textContent = "Hmmm... It's a Tie! try again.";
        }
@@ -97,17 +104,14 @@ function playRound(humanScore,computerScore){
        else {
         message.textContent = "You need to choose an option to play this game";
        }
-return humanScore;
-return computerScore;
-
+       
 }
 
 
 
-   
-   function game() { 
+function game() { 
     for (let i = 0; i < 5; i++) {
-        playRound(); //remove console here.
+        playRound(0,0); //remove console here.
         message.textContent = `\n\n\n\nComputer score: ${computerScore} |`;
         message.textContent = `Your score: ${humanScore}`;
        }
@@ -120,8 +124,6 @@ function winner() {
     } else if (computerScore < humanScore) {
         message.textContent = "\n\n\n\n\nWay to crush it! You win!";
     } else {
-        message.textContent = "\n\n\n\n\nHoly shizzers! It's a tie!";
+        message.textContent = "\n\n\n\n\nHoly! It's a tie!";
     }
-}
-
-  
+};
