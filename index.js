@@ -28,17 +28,17 @@
         computerSelection;
          
         if (computerSelection ==="rock" && humanSelection ==="paper"  || 
-        computerSelection ==="scissors" && humanSelection ==="rock" || 
-        computerSelection ==="paper" && humanSelection ==="scissors")
+            computerSelection ==="scissors" && humanSelection ==="rock" || 
+            computerSelection ==="paper" && humanSelection ==="scissors")
         { humanScore++
-            console.log('You Win!')}
+            gameStats.textContent ='You Win!'}
          else if (computerSelection ==="scissors" && humanSelection ==="paper" || 
                   computerSelection ==="rock" && humanSelection ==="scissors" || 
                   computerSelection ==="paper" && humanSelection === "rock")//
         {   computerScore++
-            console.log("Computer Wins!");    
+            gameStats.textContent ="Computer Wins!";    
         } else {
-            console.log("Tie");
+            gameStats.textContent ="Tie";
         
         }
     
@@ -51,7 +51,9 @@
     
 console.log(humanSelection);
 console.log(computerSelection);   
-    let num;
+let num;
+
+
 function playGame (num){
     
   for (let i= 1; i <= num; i++){
@@ -60,13 +62,13 @@ function playGame (num){
     
      if (i === num){
        
-        console.log ("final Round");
+        para.textContent = "final Round";
         playRound();
-        console.log (`GAME-OVER\n Player: ${ humanScore}| Computer: ${computerScore}\n\n\n`);
+        para.textContent = `\nGAME-OVER\n Player${one}: ${ humanScore}| Computer💻: ${computerScore}\n\n\n`;
         restart();
      }
      else{
-        console.log(`Round: ${i}`)
+        para.textContent = `Round: ${i}`;
         playRound();
      }
     
@@ -78,11 +80,12 @@ function playGame (num){
 
 function winner (){
     if (humanScore > computerScore){
-        console.log("Player wins the Game!!");
+        gameStats.textContent ="Player wins the Game!!";
     }
     else if(humanScore < computerScore){
-        console.log("Computer wins this time");}
-        else { console.log("It's a tie");}
+        gameStats.textContent ="Computer wins this time";}
+        else { 
+            gameStats.textContent = "It's a tie";}
 }
 
 function restart(){
@@ -95,3 +98,31 @@ function restart(){
        }
     }
 
+let body = document.querySelector('body');
+ 
+body.addEventListener('click', (event)=>{
+    let target = event .target;
+
+    switch(target.class){
+        case 'one': "lorem"
+           break;
+           case 'two': "lorem"
+           break;
+           case 'three': "lorem"
+           break;
+           case 'four': "lorem"
+           break;
+           case 'rock': "lorem"
+           break;
+           case 'paper': "lorem"
+           break;
+           case 'scissors': "lorem"
+           break;
+
+           
+    }
+});
+
+let para = document .querySelector('p');
+let gameStats = document.querySelector('span');
+let message = document.querySelector('.message');
