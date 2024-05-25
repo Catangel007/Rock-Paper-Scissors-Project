@@ -13,17 +13,41 @@
     }    
      } 
 
+
+      const rock = document.querySelector("#rock");
+      const paper = document.querySelector("#paper");
+      const scissors = document.querySelector("#scissors");
+     
+      rock.addEventListener('click', getHumanChoice);
+    
+     paper.addEventListener('click', getHumanChoice)
+     ;
+     scissors.addEventListener('click', getHumanChoice);
+
       function getHumanChoice(){
-        let humanSelection1 = prompt("Choose an Option to Play Game. Rock, Paper, Scissors?");
-         humanSelection1.toLowerCase();
-         return humanSelection1;
-      }
+        let clicked =[];
+        if (rock.addEventListener){
+            clicked.push("rock");
+        }
+        else if (paper.addEventListener){
+            clicked.push("paper");
+        }
+        else if (scissors.addEventListener){
+            clicked.push("scissors");
+    }
+      return clicked.toString();
+}
 
       let humanScore  = 0;
     let computerScore = 0;
-    
+
+    let para = document .querySelector('.score');
+let gameStats = document.querySelector('.game');
+let message = document.querySelector('.message');
+   let winner = document. querySelector('.winner');
+    let choice = document.querySelector('.choice')
    
-    function playRound(computerSelection=getComputerChoice(), humanSelection=getHumanChoice()){
+    function playRound(computerSelection = getComputerChoice(), humanSelection = getHumanChoice()){
         humanSelection;
         computerSelection;
          
@@ -43,13 +67,13 @@
         }
     
 }
-        
+
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
         
     
     
-console.log(humanSelection);
+choice.textContent = `YOU: humanSelection              COMPUTER: computerSelection`;
 console.log(computerSelection);   
 let num;
 
@@ -64,7 +88,7 @@ function playGame (num){
        
         para.textContent = "final Round";
         playRound();
-        para.textContent = `\nGAME-OVER\n Player${one}: ${ humanScore}| Computer💻: ${computerScore}\n\n\n`;
+        para.textContent = `GAME-OVER =>\n\n\n Player 🧑‍🚀: ${ humanScore}  |  Computer 💻: ${computerScore}\n\n\n`;
         restart();
      }
      else{
@@ -80,49 +104,26 @@ function playGame (num){
 
 function winner (){
     if (humanScore > computerScore){
-        gameStats.textContent ="Player wins the Game!!";
+        winner.textContent ="Player wins the Game!!";
     }
     else if(humanScore < computerScore){
-        gameStats.textContent ="Computer wins this time";}
+        winner.textContent ="Computer wins this time";}
         else { 
-            gameStats.textContent = "It's a tie";}
+            winner.textContent = "It's a tie";}
 }
 
-function restart(){
+//function restart(){
 
-       let reset = prompt("TownHome! Ready to Play a New Game, Yes or No?;");
-       if (reset === 'Yes'){
-        playGame();
-       } else{
-        prompt("Play again Next time!!\n get ready for an Ultimate battle")
-       }
-    }
+   //    let reset = prompt("TownHome! Ready to Play a New Game, Yes or No?;");
+  //     if (reset === 'Yes'){
+   //     playGame();
+   //    } else{
+   //     prompt("Play again Next time!!\n get ready for an Ultimate battle")
+   //    }
+    //}
 
-let body = document.querySelector('body');
- 
-body.addEventListener('click', (event)=>{
-    let target = event .target;
 
-    switch(target.class){
-        case 'one': "lorem"
-           break;
-           case 'two': "lorem"
-           break;
-           case 'three': "lorem"
-           break;
-           case 'four': "lorem"
-           break;
-           case 'rock': "lorem"
-           break;
-           case 'paper': "lorem"
-           break;
-           case 'scissors': "lorem"
-           break;
+    
 
-           
-    }
-});
+    
 
-let para = document .querySelector('p');
-let gameStats = document.querySelector('span');
-let message = document.querySelector('.message');

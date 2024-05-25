@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Simple Rock-Paper-Scissors Game</title>
 <!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/4.0.0/iconfont/material-icons.min.css" referrerpolicy="no-referrer" />
@@ -14,39 +15,33 @@
 </head>
 <body>
 
-  <header>
-    <p>Rock Papers Scissors Game!!!</p>
-    
-  </header>
+  <header>ROCK PAPER SCISSOR GAME </header>
 
-  <div class="page">ROCK PAPER SCISSOR GAME</div>
-  <!--apply dialog tags after the div tags-->
-   <div class="box">
-   <dialog>
-   <ul id="avatar"> Choose Your Avatar
-      <li class="one">👩‍💼</li>  
-      <li class="two">👩🏼‍🎤</li>   
-      <li class="three">🧑‍🚀</li>   
-      <li class="four">👨🏻‍🎤</li>    
-  </ul>
-
-  <div class="message" type="text"></div>
-
-
+   <dialog class="message">
+  <h2>Rules</h2><hr>
+  <br> Rock wins when rock smashes paper. 
+  <br> Paper wins when paper wraps rock. 
+  <br> Scissors wins when scissors cuts paper.
+  <br> when two elements are the same it's a tie.
+  <br><br>
+  GOOD LUCK!!!
+  
 </dialog>
 
+      <div class="score"></div>
+      <div class="game"></div>
+      <div class="choice">
+        <div class="winner"></div>
+      </div>
       
-      
-    <p> PLAYER🧑‍🚀 |  COMPUTER💻 </p>
-    <span></span>
 
   <div id="container"> 
-    <button class="rock" > 🪨 </button>
-    <button class="paper" >📃 </button>
-    <button class="scissors" >✂️ </button>
+    <button id ="rock">🪨</button>
+    <button id ="paper">📃</button>
+    <button id ="scissors">✂️</button>
   </div>
 
-
+   <button id ="restart">Restart</button>
 <footer>
   <sub>by Catangel007</sub>
 </footer>
