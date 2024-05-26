@@ -62,7 +62,8 @@ header{
     color: brown;
     font-size: 20px;
     height: 30px;
-    width: 500px
+    width: 500px;
+    text-align:center ;
 
 }
 .game{
@@ -71,21 +72,25 @@ header{
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: 30px;
-    width: 70px;
-    border: 2px solid white;
+    width: 150px;
 }
 
 .choice{
-    height: 100px;
-    width: 400px;
-    color: whitesmoke;
-    border: 2px solid white;
+    height: 60px;
+    width: 200px;
+    text-align: center;
+    color: rgb(53, 130, 185);
+    font-size: 25px;
+    font-family: monospace;
+    
 }
 .winner{
     height: 40px;
-    width: 100px;
+    width: 200px;
     color: whitesmoke;
-    border: 2px solid white;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 40px;
 }
 
 
