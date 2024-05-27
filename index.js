@@ -13,28 +13,20 @@
             return "scissors";
     }    
      } 
-
+     let humanSelection;
      
-      const rock = document.querySelector("#rock");
-      const paper = document.querySelector("#paper");
-      const scissors = document.querySelector("#scissors");
-      let humanChoice =(
-      (rock.addEventListener('click', getHumanChoice ))||
-      (paper.addEventListener('click', getHumanChoice ))||
-     (scissors.addEventListener('click', getHumanChoice))
-    )
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+            
+            button.addEventListener("click", ()=> {
+                let result = button.id;
+                alert(result);
+                return button.id;
+            });
+               
+            
+        })
      
-     function getHumanChoice(){
-       
-       if (humanChoice == rock.addEventListener('click', getHumanChoice )){
-        return "rock";
-       } else if (humanChoice == paper.addEventListener('click', getHumanChoice )){
-        return "paper";
-       } else if (scissors.addEventListener('click', getHumanChoice)){
-        return "scissors"
-       }
-    }
-      
        
       let humanScore  = 0;
       let computerScore = 0;
@@ -45,8 +37,26 @@
        let winnerStats = document. querySelector('.winner');
        let choice = document.querySelector('.choice')
    
-    function playRound( computerSelection = getComputerChoice(),  humanSelection = getHumanChoice()){
+  
+const computerSelection = getComputerChoice();
+
+      
+humanSelection;
+computerSelection;
+    
+   choice.textContent = `YOU:${humanSelection}  <====>   COMPUTER:${computerSelection}`;
+console.log(computerSelection); 
+console.log(humanSelection);  
+let num;
+
+
+function playGame (){
+
+    for (let i= 1; i <= 5; i++){
+
+    function playRound( computerSelection = getComputerChoice(),  humanSelection= buttons){
         
+
         if (computerSelection ==="rock" && humanSelection ==="paper"  || 
             computerSelection ==="scissors" && humanSelection ==="rock" || 
             computerSelection ==="paper" && humanSelection ==="scissors")
@@ -60,34 +70,22 @@
         } else {
             gameStats.textContent ="Tie";
         
-        }
-    
-}const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-      
-    
-    
-   choice.textContent = `YOU:${humanSelection}  <====>   COMPUTER:${computerSelection}`;
-console.log(computerSelection); 
-console.log(humanSelection);  
-let num;
-
-
-function playGame (num){
+        }  
+}
     
     
     
-  for (let i= 1; i <= num; i++){
+  
    
        
     
-     if (i === num){
+     if (i === 5){
        
-        para.textContent = "final Round";
+        para.textContent = "final Round\n";
         playRound();
         para.textContent = `GAME-OVER =>\n\n\n Player 🧑‍🚀: ${ humanScore}  |  Computer 💻: ${computerScore}\n\n\n`;
        // restart();
+       
      }
      else{
         para.textContent = `Round: ${i}`;
@@ -97,7 +95,7 @@ function playGame (num){
   }
   winner();
   
-} playGame(5);
+} playGame();
 
 
 function winner (){
