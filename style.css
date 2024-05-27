@@ -75,15 +75,23 @@ header{
     width: 150px;
 }
 
-.choice{
+.humanChoice{
     height: 60px;
     width: 200px;
     text-align: center;
     color: rgb(53, 130, 185);
     font-size: 25px;
-    font-family: monospace;
-    
+    font-family: monospace;  
 }
+.computerChoice{
+    height: 60px;
+    width: 200px;
+    text-align: center;
+    color: rgb(53, 130, 185);
+    font-size: 25px;
+    font-family: monospace;  
+}
+
 .winner{
     height: 40px;
     width: 200px;

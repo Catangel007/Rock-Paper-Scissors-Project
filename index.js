@@ -12,41 +12,44 @@
         else {
             return "scissors";
     }    
-     } 
+     }
+     let para = document .querySelector('.score');
+       let gameStats = document.querySelector('.game');
+       let message = document.querySelector('.message');
+       let winnerStats = document. querySelector('.winner');
+       let humanChoice = document.querySelector('.humanChoice');
+       let computerChoice = document.querySelector('.computerChoice');
+   
      let humanSelection;
+     let computerSelection;
      
         const buttons = document.querySelectorAll("button");
         buttons.forEach((button) => {
             
-            button.addEventListener("click", ()=> {
-                let result = button.id;
-                alert(result);
-                return button.id;
+            button.addEventListener("click", (buttons)=> {
+                let humanSelection = button.id;
+                 humanChoice.textContent = `YOU:${humanSelection}  <====> `; 
+                 computerChoice.textContent = `COMPUTER:${computerSelection}`; 
+                  computerSelection = getComputerChoice();  
             });
                
-            
-        })
-     
+           
+        });
        
+        console.log(computerSelection); 
+        console.log(humanSelection); 
+         
       let humanScore  = 0;
       let computerScore = 0;
 
-       let para = document .querySelector('.score');
-       let gameStats = document.querySelector('.game');
-       let message = document.querySelector('.message');
-       let winnerStats = document. querySelector('.winner');
-       let choice = document.querySelector('.choice')
-   
-  
-const computerSelection = getComputerChoice();
+       
+
 
       
 humanSelection;
 computerSelection;
     
-   choice.textContent = `YOU:${humanSelection}  <====>   COMPUTER:${computerSelection}`;
-console.log(computerSelection); 
-console.log(humanSelection);  
+    
 let num;
 
 
