@@ -25,60 +25,60 @@ function getComputerChoice(){
    
     
             
+       let humanScore = 0;
+       let computerScore = 0; 
 
-     let humanScore = 0;
-     let computerScore = 0; 
-    
      
+     let humanSelection = "";
+     let computerSelection = "";
     
-   
-        
-    
-  
      const buttons = document.querySelectorAll("button");
      
-        buttons.forEach((button) => { 
-            
-            
-            let humanSelection = "";
-     let computerSelection = getComputerChoice();
-             
-            button.addEventListener("click", ()=> {
-                 humanSelection = button.id;
-                 console.log(humanSelection); 
-                 humanChoice.textContent = `YOU:${humanSelection} `; 
-                 computerChoice.textContent = `COMPUTER:${computerSelection}`; 
-                console.log(computerSelection); 
-                
-                function playRound(human,computer){
-
-
-                    if (humanSelection === computerSelection){
-                        gameStats.textContent = "It's a Tie";
-                    } else if (humanSelection === "rock" && computerSelection === "scissors" ||
-                               humanSelection === "paper" && computerSelection === "rock" ||
-                               humanSelection === "scissors" && computerSelection === "paper"){
-                                gameStats.textContent = "You Win this Round!!";
-                                humanScore++;
-                               } else if(humanSelection === "scissors" && computerSelection === "rock" ||
-                                         humanSelection === "rock" && computerSelection === "paper" ||
-                                         humanSelection === "paper" && computerSelection === "scissors"){
-                                gameStats.textContent = "Computer wins this Round.";
-                                computerScore++;
-                               } else{
-                                gameStats.textContent = "Choose your element."
-                                
-                             } 
-                } 
-               
-                playRound(humanSelection, computerSelection);
-                
- });
-            
-                
-            ;}       
-          );
+                buttons.forEach((button) => { 
+                   
+                    button.addEventListener("click", ()=> {
+                          
+                         humanSelection = button.id;
+                         computerSelection = getComputerChoice()
+                         
+                         humanChoice.textContent = `YOU:${humanSelection} `; 
+                        computerChoice.textContent = `COMPUTER:${computerSelection}`; 
+                        console.log(humanSelection);
+                        console.log(computerSelection);
+                      
+         });
+         });
+    
        
+ function playRound(human,computer){
+
+
+    if (humanSelection === computerSelection){
+        gameStats.textContent = "It's a Tie";
+    } else if (humanSelection === "rock" && computerSelection === "scissors" ||
+               humanSelection === "paper" && computerSelection === "rock" ||
+               humanSelection === "scissors" && computerSelection === "paper"){
+                humanScore++;
+                gameStats.textContent = "You Win this Round!!";
+               
+                
+                
+               }
+                else if(humanSelection === "scissors" && computerSelection === "rock" ||
+                         humanSelection === "rock" && computerSelection === "paper" ||
+                         humanSelection === "paper" && computerSelection === "scissors"){
+                            computerScore++;
+                            gameStats.textContent = "Computer wins this Round.";
+                            
+                
+               } else{
+                gameStats.textContent = "Choose your element."
+                
+             } 
+} 
+
+
+
 //  function playGame (num){
     
 //     for (let i =1; i <= num ; i++){ 
@@ -92,29 +92,33 @@ function getComputerChoice(){
 //  }
 // playGame(5);
        
-        
-             function playGame(num){
+        function playGame(){
+             
+               for(let i =1; i < 2; i++){
                 
-            
-                      for(let i = 1; i <= num; i++){
-                          const gameRound = `${i == playRound()}`;
-                          playRound()
-                         
-                         if (i === 5){
-                        
-                             para.textContent = `GAME-OVER =>\n\n\n Player 🧑‍🚀: ${ humanScore}  |  Computer 💻: ${computerScore}\n\n\n`;  
-                         } else if(i<5){
-                           
-                             para.textContent = `Round: ${playRound()} => Player 🧑‍🚀: ${ humanScore}  |  Computer 💻: ${computerScore}\n\n\n`;
-                                 
-                         }}//winner();
-                  }
-               playGame(5);
-          
-//      // document.addEventListener("DOMContentLoaded",playGame);      
-     
-//    //}
+                playRound(humanSelection, computerSelection)
+                
+                
+               }
+            }
+          let game =  document.querySelector('body');
+          game.addEventListener("click", playGame);
+
+          function playGameFiveTimes(){
+           for (let e = 1; e <= 5; e++){
+
+            if (e === 5){
+                console.log(para.textContent);
+                 para.textContent = `GAME-OVER => Player 🧑‍🚀: ${ humanScore}  |  Computer 💻: ${computerScore}\n\n\n`;
+             } else {
+                 para.textContent = `Round:${e}  => Player 🧑‍🚀: ${ humanScore}  |  Computer 💻: ${computerScore}\n\n\n`;
+                 console.log(para.textContent);
+             }
+            }
+          } playGameFiveTimes();
+
     
+
 //    function winner (){
 //     if (humanScore > computerScore){
 //         winnerStats.textContent ="Player wins the Game!!";
