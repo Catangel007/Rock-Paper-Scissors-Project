@@ -19,12 +19,12 @@ function getComputerChoice(){
 
      let para = document .querySelector('.score');
      let gameStats = document.querySelector('.game');
-     let message = document.querySelector('.message');
+     let message = document.querySelector('dialog');
      let winnerStats = document. querySelector('.winner');
      let humanChoice = document.querySelector('.humanChoice');
      let computerChoice = document.querySelector('.computerChoice');
     let restart = document.querySelector("#restart")
-    restart.addEventListener("onclick", window.onload);
+    //restart.addEventListener("onclick", window.onload);
           
      let humanScore = 0;
      let computerScore = 0; 
@@ -41,7 +41,7 @@ function getComputerChoice(){
 
               buttons.forEach((button) => { 
                
-                  button.addEventListener("click", ()=> {
+                 button.addEventListener("click", ()=> {
                         
                        humanSelection = button.id;
                        computerSelection = getComputerChoice()
@@ -62,7 +62,7 @@ function playRound(human,computer){
 
 
   if (humanSelection === computerSelection){
-      gameStats.textContent = "It's a Tie";
+      gameStats.textContent = "It's a Tie, try again!!";
   } else if (humanSelection === "rock" && computerSelection === "scissors" ||
              humanSelection === "paper" && computerSelection === "rock" ||
              humanSelection === "scissors" && computerSelection === "paper"){
@@ -104,13 +104,18 @@ function gameScore(){
   
 
    function winner (){
-     if (humanScore > computerScore){
-         winnerStats.textContent ="Player wins the Game!!";
+     if ((humanScore > computerScore) && (humanScore + computerScore == 5)){
+         winnerStats.textContent ="Player wins the Game!! GameOver.";
+        alert( " Game-Over!!! Refresh the Page to Start-Again!");
      }
-     else if(humanScore < computerScore){
-         winnerStats.textContent ="Computer wins this time";}
-         else { 
-             winnerStats.textContent = "It's a tie";}
+     else if((humanScore < computerScore) && (humanScore + computerScore == 5)){
+         winnerStats.textContent ="Computer wins this time GameOver.";
+         alert( " Game-Over!!! Refresh the Page to Start-Again!");
+        } else if( (humanScore === computerScore) && !(humanScore + computerScore == 0)){ 
+             winnerStats.textContent = "";}
+             else {
+              winnerStats.textContent= "";
+             }
          }
   
 

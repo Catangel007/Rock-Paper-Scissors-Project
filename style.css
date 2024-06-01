@@ -110,3 +110,35 @@ dialog{
 #restart{
     height :20px;
 }
+@media  (max-width:400px){
+    div#container{
+        height: 200px;
+        width: 350px;
+       
+    }
+    
+    #rock,#paper,#scissors{
+        height: 70px;
+        width: 70px;
+        font-size: 70px;
+      
+}
+header{
+    margin: 8px;
+    color: rgb(188, 197, 205);
+    font-size: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.score{
+    border: 4px double rgb(7, 30, 72);
+}
+
+.score,.humanChoice,.computerChoice,.game,.winner{ 
+
+    font-size: 10px;
+    height: 12px;
+    width: 50px;
+}
+
+}
